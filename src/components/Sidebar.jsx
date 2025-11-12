@@ -45,11 +45,12 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
         </svg>
       ),
+      link: '#projects',
       hasSubmenu: true,
       submenu: [
-        { name: 'Web Projects', link: '#web-projects' },
-        { name: 'Mobile Apps', link: '#mobile-apps' },
-        { name: 'Design', link: '#design' }
+        { name: 'Web Projects', link: '#projects', tab: 'website' },
+        { name: 'Mobile Apps', link: '#projects', tab: 'mobile' },
+        { name: 'Design', link: '#projects', tab: 'design' }
       ]
     },
     {
@@ -76,7 +77,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       {/* Sidebar */}
       <aside
         className={`
-          bg-gray-800 text-white w-64 min-h-screen 
+          bg-gray-900 border-r border-gray-800 text-white w-64 min-h-screen 
           fixed left-0 top-0 bottom-0 overflow-y-auto z-40
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -124,7 +125,18 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                             <a
                               href={subItem.link}
                               className="block p-2 hover:bg-gray-700 rounded-lg text-sm transition-colors"
-                              onClick={() => setIsOpen(false)}
+                              onClick={(e) => {
+                                // Trigger tab change di Projects component
+                                if (subItem.tab) {
+                                  e.preventDefault();
+                                  window.location.hash = 'projects';
+                                  setTimeout(() => {
+                                    const event = new CustomEvent('changeProjectTab', { detail: subItem.tab });
+                                    window.dispatchEvent(event);
+                                  }, 100);
+                                }
+                                setIsOpen(false);
+                              }}
                             >
                               {subItem.name}
                             </a>

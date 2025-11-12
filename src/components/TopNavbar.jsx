@@ -1,6 +1,6 @@
 const TopNavbar = ({ toggleSidebar }) => {
   return (
-    <nav className="bg-gray-900 border-b border-gray-800 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <nav className="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="flex items-center space-x-4">
         {/* Tombol Hamburger untuk Toggle Sidebar */}
         <button

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +7,8 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
 
   const handleChange = (e) => {
     setFormData({
@@ -14,11 +17,38 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent! (This is a demo)');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSending(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      // Ganti dengan Service ID, Template ID, dan Public Key dari EmailJS
+      await emailjs.send(
+        'YOUR_SERVICE_ID',        // dari EmailJS Email Services
+        'YOUR_TEMPLATE_ID',       // dari EmailJS Email Templates
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        'YOUR_PUBLIC_KEY'         // dari EmailJS Account → General
+      );
+
+      setStatus({
+        type: 'success',
+        message: '✅ Message sent successfully! I will get back to you soon.'
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus({
+        type: 'error',
+        message: '❌ Failed to send message. Please try again or contact me directly.'
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const contactInfo = [
@@ -29,8 +59,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Email',
-      value: 'jasonjeferson81@gmail.com',
-      link: 'mailto:jasonjeferson81@gmail.com'
+      value: 'your.email@example.com',
+      link: 'mailto:your.email@example.com'
     },
     {
       icon: (
@@ -39,8 +69,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      value: '+62 838 7099 4278',
-      link: 'tel:+6283870994278'
+      value: '+62 123 4567 890',
+      link: 'tel:+621234567890'
     },
     {
       icon: (
@@ -55,7 +85,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-800">
+    <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center mb-16">
@@ -80,7 +110,7 @@ const Contact = () => {
                   <a
                     key={idx}
                     href={info.link}
-                    className="flex items-start p-4 bg-gray-900 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 group"
+                    className="flex items-start p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 group"
                   >
                     <div className="text-blue-500 mr-4 group-hover:scale-110 transition-transform">
                       {info.icon}
@@ -93,7 +123,7 @@ const Contact = () => {
                 ) : (
                   <div
                     key={idx}
-                    className="flex items-start p-4 bg-gray-900 rounded-lg border border-gray-700"
+                    className="flex items-start p-4 bg-gray-800 rounded-lg border border-gray-700"
                   >
                     <div className="text-blue-500 mr-4">
                       {info.icon}
@@ -116,7 +146,7 @@ const Contact = () => {
                   href="https://www.instagram.com/jeferson.jason.79?igsh=MWg3ZzF3NGZrYmc4ZQ=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 transition-all duration-300 border border-gray-700 hover:border-transparent"
+                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:border-transparent transition-all duration-300 border border-gray-700"
                   title="Instagram"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -126,10 +156,10 @@ const Contact = () => {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://www.linkedin.com/in/jeferson-undefined-00843128a"
+                  href="https:www.linkedin.com/in/jeferson-undefined-00843128a"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300 border border-gray-700 hover:border-blue-500"
+                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 border border-gray-700"
                   title="LinkedIn"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -140,7 +170,7 @@ const Contact = () => {
                 {/* Email */}
                 <a
                   href="mailto:jasonjeferson81@gmail.com"
-                  className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-600 transition-all duration-300 border border-gray-700 hover:border-red-500"
+                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 border border-gray-700"
                   title="Email"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +183,18 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div>
-            <form onSubmit={handleSubmit} className="bg-gray-900 p-8 rounded-lg border border-gray-700">
+            {/* Status Message */}
+            {status.message && (
+              <div className={`mb-6 p-4 rounded-lg border ${
+                status.type === 'success' 
+                  ? 'bg-green-900/20 border-green-700 text-green-400' 
+                  : 'bg-red-900/20 border-red-700 text-red-400'
+              }`}>
+                {status.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg border border-gray-700">
               <div className="mb-6">
                 <label className="block text-white font-medium mb-2" htmlFor="name">
                   Your Name
@@ -165,7 +206,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
                   placeholder="John Doe"
                 />
               </div>
@@ -181,7 +222,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
                   placeholder="john@example.com"
                 />
               </div>
@@ -197,16 +238,31 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                disabled={isSending}
+                className={`w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium transform transition-all duration-300 shadow-lg ${
+                  isSending 
+                    ? 'opacity-50 cursor-not-allowed' 
+                    : 'hover:from-blue-700 hover:to-purple-700 hover:scale-105'
+                }`}
               >
-                Send Message
+                {isSending ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
