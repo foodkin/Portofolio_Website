@@ -26,13 +26,13 @@ const Contact = () => {
       // Ganti dengan Service ID, Template ID, dan Public Key dari EmailJS
       await emailjs.send(
         'service_54w4ela',        // dari EmailJS Email Services
-        'template_a4qkc29',       // dari EmailJS Email Templates
+        'template_vcbrwvl',       // dari EmailJS Email Templates
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'WS9VGooJ52o5ZFKE0'         // dari EmailJS Account → General
+        'PUBLIC_WS9VGooJ52o5ZFKE0'         // dari EmailJS Account → General
       );
 
       setStatus({
