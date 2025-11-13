@@ -28,8 +28,8 @@ const Contact = () => {
         'service_54w4ela',        // dari EmailJS Email Services
         'template_vcbrwvl',       // dari EmailJS Email Templates
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          user_name: formData.name,
+          user_email: formData.email,
           message: formData.message,
         },
         'PUBLIC_WS9VGooJ52o5ZFKE0'         // dari EmailJS Account → General
