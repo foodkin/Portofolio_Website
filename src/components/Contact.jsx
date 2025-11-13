@@ -25,14 +25,14 @@ const Contact = () => {
     try {
       // Ganti dengan Service ID, Template ID, dan Public Key dari EmailJS
       await emailjs.send(
-        'YOUR_SERVICE_ID',        // dari EmailJS Email Services
-        'YOUR_TEMPLATE_ID',       // dari EmailJS Email Templates
+        'service_54w4ela',        // dari EmailJS Email Services
+        'template_a4qkc29',       // dari EmailJS Email Templates
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'         // dari EmailJS Account → General
+        'WS9VGooJ52o5ZFKE0'         // dari EmailJS Account → General
       );
 
       setStatus({
@@ -59,8 +59,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'jasonjeferson81@gmail.com',
+      link: 'mailto:jasonjeferson81@gmail.com'
     },
     {
       icon: (
@@ -69,8 +69,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      value: '+62 123 4567 890',
-      link: 'tel:+621234567890'
+      value: '+62 838 7099 4278',
+      link: 'tel:+6283870994278'
     },
     {
       icon: (
@@ -156,7 +156,7 @@ const Contact = () => {
 
                 {/* LinkedIn */}
                 <a
-                  href="https:www.linkedin.com/in/jeferson-undefined-00843128a"
+                  href="https://www.linkedin.com/in/jeferson-undefined-00843128a"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 border border-gray-700"
