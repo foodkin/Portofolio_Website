@@ -3,55 +3,28 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white py-12 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Portfolio
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Passionate developer creating amazing web experiences. 
-              Let's build something great together!
-            </p>
-          </div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Navigation Links */}
+            <div className="flex flex-wrap justify-center gap-8 mb-8">
+              <a href="#home" className="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                Home
+              </a>
+              <a href="#about" className="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                About
+              </a>
+              <a href="#skills" className="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                Skills
+              </a>
+              <a href="#projects" className="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                Projects
+              </a>
+              <a href="#contact" className="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                Contact
+              </a>
+            </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 text-sm">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 text-sm">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#skills" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 text-sm">
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 text-sm">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-400 hover:text-blue-500 transition-colors duration-300 text-sm">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Connect</h3>
-            <div className="flex gap-3">
+            {/* Social Media Icons */}
+            <div className="flex justify-center gap-4 mb-8">
               {/* Instagram */}
               <a
                 href="https://www.instagram.com/jeferson.jason.79?igsh=MWg3ZzF3NGZrYmc4ZQ=="
@@ -89,19 +62,14 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-            <p className="text-gray-500 text-sm mt-6">
-              📧 jasonjeferson81@gmail.com
-            </p>
-          </div>
-        </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
-            © {currentYear} Jeferson. Built with React & Tailwind CSS
-          </p>
-        </div>
-      </div>
+            {/* Copyright */}
+            <div className="text-center">
+              <p className="text-gray-500 text-sm">
+                © {currentYear} Jeferson. Built with React & Tailwind CSS
+              </p>
+            </div>
+          </div>
     </footer>
   );
 };
