@@ -31,7 +31,7 @@ const About = () => {
             {/* Projects Completed */}
             <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
               <p className="text-purple-500 font-bold text-4xl md:text-5xl mb-2 text-center bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
-                5
+                7
               </p>
               <p className="text-gray-400 text-sm md:text-base text-center">Projects Completed</p>
             </div>
