@@ -1,105 +1,76 @@
 import React from 'react';
 
 const Hero = () => {
+  const backgroundImage = `${process.env.PUBLIC_URL}/Jeferson.jpg`;
+
   return (
-    <section id="home" className="relative bg-gray-900 overflow-hidden min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto w-full">
-        
-        {/* LEFT SIDE CONTENT */}
-        <div className="relative z-10 pb-8 bg-gray-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+    <section id="home" className="w-full h-screen bg-gray-900 overflow-hidden">
+      <div
+        className="w-full mx-auto relative bg-cover bg-no-repeat bg-center py-20 h-full"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        {/* Gradient Overlay Wrapper (supaya nggak overflow) */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute md:-top-24 md:-right-32 sm:-right-[7rem] -right-[1rem] top-0 opacity-30 w-[15%] h-[20%] bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-3xl"></div>
 
-          {/* Diagonal SVG Shape */}
-          <svg
-            className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-900 transform translate-x-1/2"
-            fill="currentColor"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon points="50,0 100,0 50,100 0,100"></polygon>
-          </svg>
+          <div className="absolute md:-left-[45%] sm:-left-[42%] -left-[40%] opacity-10 w-[50%] h-full my-auto bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-3xl"></div>
+        </div>
 
-          <div className="pt-1"></div>
+        {/* Dark Overlay for better text visibility */}
+        <div className="absolute inset-0 bg-gray-900/70"></div>
 
-          {/* MAIN CONTENT */}
-          <main className="mt-10 mx-auto max-w-7xl px-4 
-              sm:mt-12 sm:px-6 
-              md:mt-16 
-              lg:mt-20 lg:px-8 
-              xl:mt-28"
-          >
-            <div className="sm:text-center lg:text-left">
+        <div className="w-[80%] mx-auto h-full flex justify-between items-center relative z-10">
+          <div className="h-full xl:w-[50%] md:w-[60%] sm:w-[70%] w-full text-white flex flex-col gap-2 justify-center">
 
-              {/* Greeting */}
-              <h2 className="my-6 text-2xl tracking-tight font-bold text-gray-400 sm:text-3xl md:text-4xl">
-                Hi, I'm
-              </h2>
+            {/* Greeting */}
+            <h1 className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-semibold text-gray-400">
+              Hi, I'm
+            </h1>
 
-              {/* Name */}
-              <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl mb-6">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Jeferson
-                </span>
-              </h1>
+            {/* Name Gradient */}
+            <h1 className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Jeferson
+            </h1>
 
-              {/* Job Title */}
-              <p className="text-xl md:text-2xl font-semibold text-gray-300 mb-4 flex items-center">
-                <svg className="h-6 w-6 fill-current text-blue-500 mr-3"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-                </svg>
-                Front-end Developer
-              </p>
+            {/* Job Title */}
+            <p className="lg:text-3xl sm:text-xl text-lg lg:my-6 my-2 flex items-center text-gray-300">
+              <svg
+                className="h-6 w-6 fill-current text-blue-500 mr-3"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
+              </svg>
+              Front-end Developer
+            </p>
 
-              {/* Location */}
-              <p className="text-base text-gray-400 mb-8 flex items-center">
-                <svg className="h-5 w-5 fill-current text-blue-500 mr-3"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm7.75-8a8.01 8.01 0 0 0 0-4h-3.82a28.81 28.81 0 0 1 0 4h3.82zm-.82 2h-3.22a14.44 14.44 0 0 1-.95 3.51A8.03 8.03 0 0 0 16.93 14zm-8.85-2h3.84a24.61 24.61 0 0 0 0-4H8.08a24.61 24.61 0 0 0 0 4zm.25 2c.41 2.4 1.13 4 1.67 4s1.26-1.6 1.67-4H8.33zm-6.08-2h3.82a28.81 28.81 0 0 1 0-4H2.25a8.01 8.01 0 0 0 0 4zm.82 2a8.03 8.03 0 0 0 4.17 3.51c-.42-.96-.74-2.16-.95-3.51H3.07zm13.86-8a8.03 8.03 0 0 0-4.17-3.51c.42.96.74 2.16.95 3.51h3.22zm-8.6 0h3.34c-.41-2.4-1.13-4-1.67-4S8.74 3.6 8.33 6zM3.07 6h3.22c.2-1.35.53-2.55.95-3.51A8.03 8.03 0 0 0 3.07 6z" />
-                </svg>
-                South Tangerang, Banten, ID
-              </p>
+            {/* Description */}
+            <p className="lg:text-xl sm:text-lg text-base text-gray-400 leading-relaxed">
+              I create beautiful and functional web applications.
+              Passionate about clean code, modern design, and delivering exceptional user experiences.
+            </p>
 
-              {/* Description */}
-              <p className="text-base text-gray-400 max-w-xl mb-10 leading-relaxed">
-                I create beautiful and functional web applications. 
-                Passionate about clean code, modern design, and delivering exceptional user experiences.
-              </p>
+            {/* Buttons */}
+            <div className="flex sm:flex-row flex-col gap-4 lg:mt-4 mt-2">
+              <a
+                href="#projects"
+                className="md:px-8 px-4 md:py-4 py-2 md:text-xl text-lg font-semibold rounded-md bg-blue-600 hover:bg-blue-700 cursor-pointer text-center transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+              >
+                View Projects
+              </a>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#projects"
-                  className="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 
-                             transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/50 text-center"
-                >
-                  View Projects
-                </a>
-
-                <a
-                  href="#contact"
-                  className="px-8 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg font-medium 
-                             hover:bg-gray-700 transform hover:scale-105 transition-all duration-300 text-center"
-                >
-                  Contact Me
-                </a>
-              </div>
-
+              <a
+                href="#contact"
+                className="md:px-8 px-4 md:py-4 py-2 md:text-xl text-lg font-semibold outline outline-2 outline-gray-700 rounded-md cursor-pointer text-center bg-gray-800 hover:bg-gray-700 transform hover:scale-105 transition-all duration-300"
+              >
+                Contact Me
+              </a>
             </div>
-          </main>
 
+          </div>
+          <div></div>
         </div>
       </div>
-
-      {/* RIGHT SIDE IMAGE */}
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover object-center sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="/Jeferson.jpg"
-          alt="Jeferson"
-        />
-      </div>
-
     </section>
   );
 };

@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
 import useSmoothScroll from './hooks/useSmoothScroll';
+import Certificates from './components/Certificates';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Certificates />
         <Projects />
         <Contact />
         <Footer />

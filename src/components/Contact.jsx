@@ -61,7 +61,7 @@ ${formData.message}
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-gray-900 py-6 flex flex-col justify-center sm:py-12">
+    <section id="contact" className="min-h-screen bg-gray-800 py-6 flex flex-col justify-center sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Title */}
@@ -79,7 +79,7 @@ ${formData.message}
           <div className="relative py-3 w-full">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
             
-            <div className="text-white relative px-4 py-10 bg-gray-800 shadow-lg sm:rounded-3xl sm:p-10">
+            <div className="text-white relative px-4 py-10 bg-gray-900 shadow-lg sm:rounded-3xl sm:p-10">
               <div className="text-center pb-6">
                 <h1 className="text-3xl font-bold">Contact Me!</h1>
                 <p className="text-gray-300">
