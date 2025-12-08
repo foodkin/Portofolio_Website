@@ -10,6 +10,15 @@ export const certificatesData = [
   },
   {
     id: 2,
+    title: 'Introduction to HTML',
+    issuer: 'sololearn',
+    date: '2025',
+    file: '/certificates/Introduction to HTML.pdf',
+    type: 'pdf',
+    description: 'has successfully completed the course by demonstrating theoretical and practical understanding of Introduction to HTML'
+  },
+  {
+    id: 3,
     title: 'Introduction to Python',
     issuer: 'sololearn',
     date: '2025',
@@ -18,7 +27,7 @@ export const certificatesData = [
     description: 'has successfully completed the course by demonstrating theoretical and practical understanding of Introduction to Python'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Python Intermediate',
     issuer: 'sololearn',
     date: '2025',
