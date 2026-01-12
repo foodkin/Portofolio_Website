@@ -21,7 +21,7 @@ const websiteProjects = [
     description: 'Website for the UMN TV organization at UMN.',
     image: '🌐',
     tags: ['React', 'css'],
-    demo: null,
+    demo: 'https://tv.umn.ac.id/',
     github: 'https://github.com/NomieC/UMNTV_GEN11.git'
   }
 ];
