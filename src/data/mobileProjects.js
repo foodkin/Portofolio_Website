@@ -1,20 +1,20 @@
 // Data untuk Mobile App Projects
 const mobileProjects = [
     {
-    title: 'EngLab',
-    description: 'English learning application with machine learning.',
-    image: '📱',
-    tags: ['Kotlin', 'Xml', 'Android'],
-    apk: '/downloads/EngLab.apk',
-    github: 'https://github.com/foodkin/EngLab.git'
-  },
-  {
     title: 'Absensi App',
     description: 'Attendance application with live tracking location.',
     image: '📱',
     tags: ['Kotlin', 'Xml', 'Android'],
     apk: '/downloads/Absensi.apk',
     github: 'https://github.com/foodkin/AbsensiApp'
+  },
+  {
+    title: 'EngLab',
+    description: 'English learning application with machine learning.',
+    image: '📱',
+    tags: ['Kotlin', 'Xml', 'Android'],
+    apk: 'https://drive.google.com/drive/folders/1qpviqQsNPWnqCJpTiR47OUfzk0SBJZ2H?usp=drive_link',
+    github: 'https://github.com/foodkin/EngLab.git'
   },
   {
     title: 'Daily Gabut Quest',
