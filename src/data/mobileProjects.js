@@ -1,5 +1,13 @@
 // Data untuk Mobile App Projects
 const mobileProjects = [
+    {
+    title: 'EngLab',
+    description: 'English learning application with machine learning.',
+    image: '📱',
+    tags: ['Kotlin', 'Xml', 'Android'],
+    apk: '/downloads/EngLab.apk',
+    github: 'https://github.com/foodkin/EngLab.git'
+  },
   {
     title: 'Absensi App',
     description: 'Attendance application with live tracking location.',
