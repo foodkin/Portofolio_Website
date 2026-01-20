@@ -59,6 +59,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       submenu: [
         { name: 'Web Projects', link: '#projects', tab: 'website' },
         { name: 'Mobile Apps', link: '#projects', tab: 'mobile' },
+        { name: 'Games', link: '#projects', tab: 'games' },
         { name: 'Design', link: '#projects', tab: 'design' }
       ]
     },
