@@ -23,17 +23,17 @@ const Hero = () => {
           <div className="h-full xl:w-[50%] md:w-[60%] sm:w-[70%] w-full text-white flex flex-col gap-2 justify-center">
 
             {/* Greeting */}
-            <h1 className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-semibold text-gray-400">
+            <p className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-semibold text-gray-400">
               Hi, I'm
-            </h1>
+            </p>
 
             {/* Name Gradient */}
-            <h1 className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
               Jeferson
-            </h1>
+            </h2>
 
-            {/* Job Title */}
-            <p className="lg:text-3xl sm:text-xl text-lg lg:my-6 my-2 flex items-center text-gray-300">
+            {/* Main SEO Title */}
+            <h1 className="lg:text-3xl sm:text-xl text-lg lg:my-6 my-2 flex items-center text-gray-300">
               <svg
                 className="h-6 w-6 fill-current text-blue-500 mr-3"
                 xmlns="http://www.w3.org/2000/svg"
@@ -41,13 +41,14 @@ const Hero = () => {
               >
                 <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
               </svg>
-              IT Developer
-            </p>
+              Frontend Developer
+            </h1>
 
             {/* Description */}
             <p className="lg:text-xl sm:text-lg text-base text-gray-400 leading-relaxed">
               I create beautiful and functional web applications.
-              Passionate about clean code, modern design, and delivering exceptional user experiences.
+              Passionate about clean code, modern design, and delivering exceptional user experiences
+              through modern frontend technologies like React and responsive UI development.
             </p>
 
             {/* Buttons */}
