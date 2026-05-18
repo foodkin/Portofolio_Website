@@ -17,6 +17,33 @@ html {
   }
 }
 
+
 .animate-spin-slow {
   animation: spin-slow 3s linear infinite;
 }
+
+/* Client logos scroll */
+.custom-client-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.7) transparent;
+}
+
+/* Stop page scroll while scrolling client area */
+.custom-client-scroll {
+  -ms-overflow-style: none;
+}
+
+
+.custom-client-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-client-scroll::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.6);
+  border-radius: 999px;
+}
+
+.custom-client-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+

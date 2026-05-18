@@ -8,12 +8,20 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Client from './components/Client';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
 import useSmoothScroll from './hooks/useSmoothScroll';
 import Certificates from './components/Certificates';
 
-import { Analytics } from "@vercel/analytics/react";
+// Analytics is optional during local dev/test (module may not be installed)
+let Analytics;
+try {
+  // eslint-disable-next-line import/no-extraneous-dependencies
+  ({ Analytics } = require('@vercel/analytics/react'));
+} catch (e) {
+  Analytics = null;
+}
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -90,6 +98,7 @@ function App() {
         <Skills />
         <Certificates />
         <Projects />
+        <Client />
         <Contact />
         <Footer />
       </main>
