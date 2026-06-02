@@ -98,9 +98,9 @@ const Hero = () => {
               IT Developer
             </h1>
             <p className="lg:text-xl sm:text-lg text-base text-gray-400 leading-relaxed">
-              I create beautiful and functional web applications.
-              Passionate about clean code, modern design, and delivering exceptional user experiences
-              through modern frontend technologies like React and responsive UI development.
+                I build innovative digital solutions across web, software, and technology platforms.
+                Passionate about solving real-world problems through clean code, scalable systems, and modern development practices.
+                I enjoy turning ideas into reliable and impactful technology products.
             </p>
             <div className="flex sm:flex-row flex-col gap-4 lg:mt-4 mt-2">
               <a
